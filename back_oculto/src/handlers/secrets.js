@@ -6,7 +6,7 @@ const SecretModel = require('../resources/db/models/Secret')
 const draw = require('../utils/draw')
 
 module.exports.create = async (event, context)=>{
-context.callbackwaitsForEmptyEventLoop = false
+context.callbackWaitsForEmptyEventLoop = false
 
   const {name, email} = JSON.parse(event.body)
   const externalId = uuidv4();
@@ -73,7 +73,7 @@ module.exports.get = async (event,context)=>{
 }
 
 module.exports.draw = async (event, context)=>{
-  context.callbackwaitsForEmptyEventLoop = false
+  context.callBackWaitsForEmptyEventLoop = false
 
   const { id: externalId} = event.pathParameters
   const adminKey = event.headers['admin-key']
